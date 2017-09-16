@@ -1,0 +1,23 @@
+<div class="myinfo">
+<div class="container">
+  <span ng-if="myInfo.fName==''" class="error">Not Signed Up Yet. <a href="#" ui-sref="public.signUp">Sign up Now!</a></span>
+  <div ng-hide="myInfo.fName==''" align=left class="jumbotron">
+  First name: <u><b><i>{{myInfo.fName}}</i></b></u>
+  <br>
+  Last name:  <u><b><i>{{myInfo.lName}}</i></b></u>
+  <br>
+  Email: <u><b><i>{{myInfo.email}}</i></b></u>
+  <br>
+  Phone: <u><b><i>{{myInfo.phone}}</i></b></u>
+  <br>
+  Favorite Dish shortname: <u><b><i>{{myInfo.favoritesname}}</i></b></u>
+  <br>
+  Favorite Dish name: <u><b><i>{{myInfo.favoritename}}</i></b></u>
+  <br>
+  Favorite Dish description: <u><b><i>{{myInfo.description}}</i></b></u>
+  <br>
+<img width="250" height="150" ng-src="{{myInfo.basepath}}/images/{{myInfo.favoritesname}}.jpg" alt="{{myInfo.favoritename}}">
+
+  </div>
+</div>
+</div>
