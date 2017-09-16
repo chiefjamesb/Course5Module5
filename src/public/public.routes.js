@@ -34,12 +34,23 @@ function routeConfig ($stateProvider) {
       url: '/myInfo',
       templateUrl: 'src/public/menu/myInfo.html',
       controller: 'MyInfoController',
-      controllerAs: 'myInfo'
+      controllerAs: 'myInfo',
+      resolve: {
+        info: ['MyInfoService',function (MyInfoService) {
+          return MyInfoService.getMyInfo();
+        }]
+      }
     })
     .state('public.signUp', {
       url: '/signUp',
-      templateUrl: 'src/public/menu/signUp.html'
-      
+      templateUrl: 'src/public/menu/signup.html',
+      controller: 'SignUpController',
+      controllerAs: 'signUp',
+      resolve: {
+        categories: ['MyInfoService',function (MyInfoService) {
+          return MyInfoService.getAllCategories();
+        }]
+      }
     })
     .state('public.menuitems', {
       url: '/menu/{category}',
